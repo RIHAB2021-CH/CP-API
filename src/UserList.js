@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
-import {Card,Button,Container} from 'react-bootstrap'
+import {Card,Button} from 'react-bootstrap'
 const UserList = () => {
     const [listOfUSer,setListOfUSer]=useState([]);
     
@@ -20,9 +20,9 @@ const UserList = () => {
         
     }, [])
     return (
-      <Container fluid="true">
+       <div className='row'>
            { listOfUSer.map(el=>
-        
+       <div className="col-md-4 my-3">
            <Card bg="secondary" text="white" style={{ width: '22rem',marginTop:'1.5rem' }} key={el.id}>
            <Card.Body>
              <Card.Title><h3> Name : {el.name}</h3></Card.Title>
@@ -39,9 +39,10 @@ const UserList = () => {
              <Button variant="danger">More Details</Button>
            </Card.Body>
          </Card>
-        )}
+         </div>
+        )}</div>
             
-            </Container>
+           
     )
 }
 
